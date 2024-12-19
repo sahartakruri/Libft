@@ -6,7 +6,7 @@
 /*   By: satakrur <satakrur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 13:08:36 by satakrur          #+#    #+#             */
-/*   Updated: 2024/12/19 13:35:00 by satakrur         ###   ########.fr       */
+/*   Updated: 2024/12/19 14:57:26 by satakrur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);

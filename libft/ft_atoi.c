@@ -6,7 +6,7 @@
 /*   By: satakrur <satakrur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 12:47:08 by satakrur          #+#    #+#             */
-/*   Updated: 2024/12/19 13:22:02 by satakrur         ###   ########.fr       */
+/*   Updated: 2024/12/19 15:00:52 by satakrur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,7 @@ int	ft_atoi(const char *str)
 	}
 	return (result * sign);
 }
-
-
+/*
 int	main(void)
 {
 	char	*str;
@@ -47,4 +46,4 @@ int	main(void)
 	printf("\n%d",atoi(str));	
 	return (0);
 }
-
+*/

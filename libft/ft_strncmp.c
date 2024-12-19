@@ -6,13 +6,13 @@
 /*   By: satakrur <satakrur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 12:32:58 by satakrur          #+#    #+#             */
-/*   Updated: 2024/12/19 13:35:31 by satakrur         ###   ########.fr       */
+/*   Updated: 2024/12/19 14:58:39 by satakrur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t int n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	int	i;
 
@@ -28,9 +28,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t int n)
 	}
 	return (0);
 }
-
-#include <stdio.h>
-#include <string.h>
+/*
 int	main(void)
 {
 	char	s1[] = "hello k";
@@ -42,3 +40,4 @@ printf("%d\n", ft_strncmp(s1, s2, n));
 	printf("%d", strncmp(s1, s2, n));
 	return (0);
 }
+*/
