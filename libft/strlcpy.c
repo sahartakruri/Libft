@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   strlcpy.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: satakrur <satakrur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/19 14:49:33 by satakrur          #+#    #+#             */
-/*   Updated: 2024/12/19 17:07:19 by satakrur         ###   ########.fr       */
+/*   Created: 2024/12/19 15:07:28 by satakrur          #+#    #+#             */
+/*   Updated: 2024/12/19 15:48:33 by satakrur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+size_t	ft_strlcpy(char * restrict dst, const char * restrict src, size_t dstsize)
 {
 	size_t	i;
 	size_t	j;
@@ -21,33 +21,27 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	i = 0;
 	j = 0;
 	k = 0;
-	while (needle[k] != '\0')
-		k++;
-	if (k == 0)
-		return ((char*)haystack);
-	while (haystack[i] != '\0')
+	while (src[j] != '\0')
+		j++;
+	while (src[i] != '\0' && i < dstsize - 1)
 	{
-		while (haystack[i] == needle[j] && needle[j] != '\0' && i < len)
-		{
-			j++;
-			i++;
-		}
-		if (j == k)
-			return ((char*)haystack + i - j);
+		dst[i] = src[i];
 		i++;
-		j = 0;
 	}
-	return (0);
+	dst[i] = '\0';
+	return (j);
 }
 /*
 int	main(void)
 {
-	char	str[] ="hello everyone!! lsj every";
-	char	to_find[] = "llo";
-	int		n = 10;
+	char	src[25] = " world ailhiu";
+	char	dst[20] = "hello";
+	size_t	size;
 
-	printf("%s", ft_strnstr(str, to_find, n));
-	printf("\n%s", strnstr(str, to_find, n));
+	size = 10;
+	printf("%zu\n", ft_strlcpy(dst, src, size));
+	//printf("%lu\n", strlcpy(dst, src, size));
+	printf("%s", dst);
 	return (0);
 }
 */

@@ -1,53 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: satakrur <satakrur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/19 14:49:33 by satakrur          #+#    #+#             */
-/*   Updated: 2024/12/19 17:07:19 by satakrur         ###   ########.fr       */
+/*   Created: 2024/12/19 15:50:05 by satakrur          #+#    #+#             */
+/*   Updated: 2024/12/19 16:22:07 by satakrur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+size_t	ft_strlcat(char * restrict dst, const char * restrict src, size_t dstsize)
 {
 	size_t	i;
 	size_t	j;
 	size_t	k;
+	size_t	n;
 
 	i = 0;
 	j = 0;
 	k = 0;
-	while (needle[k] != '\0')
-		k++;
-	if (k == 0)
-		return ((char*)haystack);
-	while (haystack[i] != '\0')
-	{
-		while (haystack[i] == needle[j] && needle[j] != '\0' && i < len)
-		{
-			j++;
-			i++;
-		}
-		if (j == k)
-			return ((char*)haystack + i - j);
+	while (dst[i] != '\0')
 		i++;
-		j = 0;
+	n = i;
+	while (src[j] != '\0')
+		j++;
+	while (src[k] != '\0' &&  i < dstsize - 1)
+	{
+		dst[i] = src[k];
+		k++;
+		i++;
 	}
-	return (0);
+	dst[i] = '\0';
+	return (n + j);
 }
 /*
 int	main(void)
 {
-	char	str[] ="hello everyone!! lsj every";
-	char	to_find[] = "llo";
-	int		n = 10;
+	char	src[25] = " world ailhiu";
+	char	dest[20] = "hello";
+	unsigned int	size;
 
-	printf("%s", ft_strnstr(str, to_find, n));
-	printf("\n%s", strnstr(str, to_find, n));
+	size = 10;
+	printf("%zu\n", ft_strlcat(dest, src, size));
+//	printf("%lu\n", strlcat(dest, src, size));
+	printf("%s", dest);
 	return (0);
 }
 */
