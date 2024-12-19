@@ -36,9 +36,7 @@ int	ft_atoi(const char *str)
 	}
 	return (result * sign);
 }
-/*
-#include <stdio.h>
-#include <stdlib.h>
+
 
 int	main(void)
 {
@@ -49,4 +47,4 @@ int	main(void)
 	printf("\n%d",atoi(str));	
 	return (0);
 }
-*/
+
