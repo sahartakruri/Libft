@@ -6,7 +6,7 @@
 /*   By: satakrur <satakrur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 13:08:36 by satakrur          #+#    #+#             */
-/*   Updated: 2024/12/19 16:27:19 by satakrur         ###   ########.fr       */
+/*   Updated: 2024/12/19 17:16:20 by satakrur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,6 @@ int		ft_atoi(const char *str);
 size_t	ft_strlcpy(char * restrict dst, const char * restrict src, size_t dstsize);
 size_t	ft_strlcat(char * restrict dst, const char * restrict src, size_t dstsize);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+char    *ft_strdup(const char *s1);
 
 #endif
