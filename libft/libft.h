@@ -32,6 +32,7 @@ int		ft_atoi(const char *str);
 size_t	ft_strlcpy(char * restrict dst, const char * restrict src, size_t dstsize);
 size_t	ft_strlcat(char * restrict dst, const char * restrict src, size_t dstsize);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+void    *ft_calloc(size_t num_elements, size_t element_size);
 char    *ft_strdup(const char *s1);
 
 #endif
