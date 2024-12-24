@@ -1,23 +1,24 @@
+
 # include "libft.h"
 
 void    ft_bzero(void *s, size_t n)
 {
     unsigned char   *str;
-    size_t    i;
-
+    
     str = s;
-    while (i < n)
+    while (n)
     {
-        str[i] = 0;
-        i++;
+        *str++ = 0;
+        n--;
     }
  }
-
+/*
 int main(void)
 {
-    char str[100] = "hello world";
+    char str[100] = "helloooooooooooooo";
     size_t n;
     n = 5;
-    printf("%s, ft_bzero(str,n)");
+    ft_bzero(str, n);
+    printf("%s", str);
     return (0);
-}
+}*/
