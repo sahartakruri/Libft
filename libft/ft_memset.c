@@ -10,22 +10,34 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-//void	*ft_memset(char *b, int c, size_t len)
-//
+void	*ft_memset(void *s, int c, size_t n)
+{
+	unsigned char *ptr;
+	size_t	i;
 
+	ptr = s;
+	i = 0;
+	while (i < n)
+	{
+		ptr[i] = (unsigned char)c;
+		i++;
+	}
+	return (ptr);
+}
+/*
 #include <stdio.h>
 #include <string.h>
 int	main(void)
 {
-	char	*str;
-	char	str2[ 100];
-	int	c =3;
-	size_t n =32;
+	char	str[10];
+	char	str2[ 10];
+	int	c = 90;
+	size_t n =5;
 
-	str = "hello everybody";
-	memset(str, c, n);
-	printf("%s", str);
+	printf ("%s",memset(str, c, n));
+	printf("\n%s", ft_memset(str2, c, n));
 	return (0);
 }
+*/
