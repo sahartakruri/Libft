@@ -1,6 +1,19 @@
 
 #include "libft.h"
 
+size_t	ft_strlen(const char *s)
+{
+	size_t	i;
+
+	i = 0;
+	while (*s)
+	{
+		i++;
+		s++;
+	}
+	return (i);
+}
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t i;
@@ -26,5 +39,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	subs[i] = '\0';
 	return (subs);
 }
-
-
+/*
+int main() {
+    char *s = "Hello, World!";
+    char *substr = ft_substr(s, 7, 5);
+	printf("Substring: %s\n", substr);
+    free(substr);
+    
+    return 0;
+}*/
