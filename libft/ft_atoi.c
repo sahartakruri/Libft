@@ -6,7 +6,7 @@
 /*   By: satakrur <satakrur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 12:47:08 by satakrur          #+#    #+#             */
-/*   Updated: 2024/12/19 15:00:52 by satakrur         ###   ########.fr       */
+/*   Updated: 2025/01/03 11:25:14 by satakrur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	main(void)
 
 	str =  " +1234ab567";
 	printf("%d", ft_atoi(str));
-	printf("\n%d",atoi(str));	
+	printf("\n%d",atoi(str));
 	return (0);
 }
 */

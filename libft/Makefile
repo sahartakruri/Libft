@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: satakrur <satakrur@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/01/03 10:54:12 by satakrur          #+#    #+#              #
+#    Updated: 2025/01/03 11:33:16 by satakrur         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
@@ -10,7 +22,7 @@ ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
 OBJS = $(SRCS: .c = .o)
 
-HEADER = libft.HEADER
+HEADER = libft.h
 
 NAME = libft.a
 

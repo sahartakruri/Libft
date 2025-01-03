@@ -1,4 +1,14 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: satakrur <satakrur@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/03 10:47:36 by satakrur          #+#    #+#             */
+/*   Updated: 2025/01/03 11:25:48 by satakrur         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
@@ -30,8 +40,8 @@ size_t	ft_count(int n)
 		sign = -1;
 		n *= sign;
 	}
-	else 
-	sign = 1;		
+	else
+		sign = 1;
 	if (n == 0)
 		return (1);
 	while (n > 0)
@@ -47,15 +57,15 @@ size_t	ft_count(int n)
 char	*ft_zeronum(int n)
 {
 	char	*str;
+
 	if (n == 0)
 	{
 		str = ft_memoall(1);
 		str[0] = '0';
 	}
-    str[1] = '\0';
-    return (str);
+	str[1] = '\0';
+	return (str);
 }
-
 
 char	*ft_itoa(int n)
 {
@@ -69,7 +79,7 @@ char	*ft_itoa(int n)
 	if (str == NULL)
 		return (NULL);
 	str[i] = '\0';
-	if(ft_is_neg(n))
+	if (ft_is_neg(n))
 	{
 		str[0] = '-';
 		n *= -1;
@@ -82,7 +92,7 @@ char	*ft_itoa(int n)
 	return (str);
 }
 /*
-int main(void)
+int	main(void)
 {
 	int	n = 1000;
 	char	*str;

@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: satakrur <satakrur@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/03 10:53:20 by satakrur          #+#    #+#             */
+/*   Updated: 2025/01/03 14:59:49 by satakrur         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
@@ -15,67 +26,67 @@ int	ft_check(char const *set, char const c)
 	return (0);
 }
 
-size_t	ft_strlen(const char *s)
+size_t	ft_start(char const *s1, char const *set)
 {
-	size_t	i;
+	size_t	start;
 
-	i = 0;
-	while (*s)
-	{
-		i++;
-		s++;
-	}
-	return (i);
+	start = 0;
+	while (s1[start] != '\0' && ft_check(set, s1[start]))
+		start++;
+	return (start);
 }
 
-char *ft_strtrim(char const *s1, char const *set)
+size_t	ft_end(char const *s1, char const *set, size_t start)
 {
-    size_t	start;
-    size_t	end;
-    size_t	len;
-	size_t	i;
-    char	*s2;
+	size_t	end;
+	size_t	len;
 
-    start = 0;
-	if (s1 == NULL || set == NULL)
-        return NULL;
-
-    len = ft_strlen(s1);
-
-    while (s1[start] != '\0' && ft_check(set, s1[start]))
-    {
-        start++;
-    }
-	if (start == len)
-   		{
-			s2 = (char *)malloc(1 * sizeof(char));
-			if (s2 == NULL)
-				return (NULL);
-			s2[0] = '\0';
-			return (s2);
-		}
+	len = ft_strlen(s1);
 	end = len - 1;
-    while (end > start && ft_check(set, s1[end]))
-    {
-        end--;
-    }
+	while (end > start && ft_check(set, s1[end]))
+		end--;
+	return (end);
+}
+
+char	*ft_special(void)
+{
+	char	*s2;
+
+	s2 = (char *)malloc(1 * sizeof(char));
+	if (s2 == NULL)
+		return (NULL);
+	s2[0] = '\0';
+	return (s2);
+}
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	size_t	start;
+	size_t	end;
+	size_t	len;
+	size_t	i;
+	char	*s2;
+
+	start = ft_start(s1, set);
+	if (s1 == NULL || set == NULL)
+		return (NULL);
+	len = ft_strlen(s1);
+	if (start == len)
+		return (ft_special());
+	end = ft_end(s1, set, start);
 	s2 = (char *)malloc((end - start + 2) * sizeof(char));
-    if (s2 == NULL)
-        return NULL;
-    i = 0;
-    while (start <= end)
-    {
-        s2[i] = s1[start];
-		i++;
-		start++;
-    }
-    s2[i] = '\0';
-    return (s2);
+	if (s2 == NULL)
+		return (NULL);
+	i = 0;
+	while (start <= end)
+		s2[i++] = s1[start++];
+	s2[i] = '\0';
+	return (s2);
 }
 /*
 int	main(void)
 {
-	char	s[20] = "hello everybody nha";
+	char	s[25] = "hello everybody and olla";
 	char	set[10] = "hea";
 	char	*news;
 	news = ft_strtrim(s, set);
@@ -83,4 +94,5 @@ int	main(void)
 		printf("%s", news);
 	free (news);
 	return (0);
+	// you have to add ft_strlen.c while compiling
 }*/

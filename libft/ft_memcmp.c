@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: satakrur <satakrur@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/03 10:48:14 by satakrur          #+#    #+#             */
+/*   Updated: 2025/01/03 11:27:02 by satakrur         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
@@ -18,12 +29,17 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
+
 /*
 int	main(void)
 {
-	char	*s1 = "hello everybody";
-	char	*s2 = "hello world";
-	int	n = 12;
+	char	*s1;
+	char	*s2;
+	int		n;
+
+	s1 = "hello everybody";
+	s2 = "hello world";
+	n = 12;
 	printf("%d", ft_memcmp(s1, s2, n));
 	printf("\n%d", memcmp(s1, s2,n));
 	return (0);

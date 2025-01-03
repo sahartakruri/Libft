@@ -1,10 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: satakrur <satakrur@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/03 10:51:09 by satakrur          #+#    #+#             */
+/*   Updated: 2025/01/03 11:29:06 by satakrur         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	unsigned int	i;
-	
+
 	if (s == NULL || f == NULL)
 		return ;
 	i = 0;
@@ -22,17 +33,17 @@ char	ft_toupper(int c)
 	return (c);
 }
 
-void to_uppercase(unsigned int index, char *c)
+void	to_uppercase(unsigned int index, char *c)
 {
-    *c = (char)ft_toupper(*c);
+	*c = (char)ft_toupper(*c);
 	index = 0 + index;
 }
 
-int main(void) {
-    char str[] = "hello world";
+int	main(void) {
+	char str[] = "hello world";
 	printf("origional string:%s\n", str);
-    ft_striteri(str, to_uppercase);
-    printf("Modified string: %s\n", str);
-    
-    return 0;
+	ft_striteri(str, to_uppercase);
+	printf("Modified string: %s\n", str);
+
+	return (0);
 }*/
