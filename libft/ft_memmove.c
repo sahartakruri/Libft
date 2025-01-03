@@ -6,7 +6,7 @@
 /*   By: satakrur <satakrur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 10:48:50 by satakrur          #+#    #+#             */
-/*   Updated: 2025/01/03 11:26:54 by satakrur         ###   ########.fr       */
+/*   Updated: 2025/01/03 20:02:59 by satakrur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	dest1 = (unsigned char *)dest;
 	src1 = (unsigned char *)src;
+	if (dest1 == src1)
+		return (dest);
 	if (src1 < dest1)
 	{
 		while (n--)
