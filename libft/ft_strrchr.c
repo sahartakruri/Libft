@@ -6,7 +6,7 @@
 /*   By: satakrur <satakrur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 12:22:26 by satakrur          #+#    #+#             */
-/*   Updated: 2024/12/19 13:19:56 by satakrur         ###   ########.fr       */
+/*   Updated: 2025/01/03 17:09:29 by satakrur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,19 @@ char	*ft_strrchr(const char *s, int c)
 	int	n;
 
 	k = 0;
-	n = 0;
+	n = -1;
+	if (s == NULL)
+		return (NULL);
 	while (s[k] != '\0')
 	{
 		if (s[k] == c)
 			n = k;
 		k++;
 	}
+	if (c == '\0')
+		return ((char *)s + k);
+	if (n == -1)
+		return (NULL);
 	return ((char *)s + n);
 }
 /*
@@ -33,8 +39,8 @@ char	*ft_strrchr(const char *s, int c)
 
 int	main(void)
 {
-	printf("%s", ft_strrchr("hello everyone", 'o'));
-	printf("\n%s", strrchr("hello everyone", 'o'));
+	printf("%s", ft_strrchr("hello everyone", '\0'));
+	printf("\n%s", strrchr("hello everyone", '\0'));
 	return (0);
 }
 */

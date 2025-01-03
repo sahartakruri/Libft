@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlcpy.c                                          :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: satakrur <satakrur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 15:07:28 by satakrur          #+#    #+#             */
-/*   Updated: 2024/12/19 15:48:33 by satakrur         ###   ########.fr       */
+/*   Updated: 2025/01/03 17:50:16 by satakrur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,33 +15,32 @@
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
-	size_t	j;
-	size_t	k;
 
 	i = 0;
-	j = 0;
-	k = 0;
-	while (src[j] != '\0')
-		j++;
-	while (src[i] != '\0' && i < size - 1)
+	if (size > 0)
 	{
-		dst[i] = src[i];
-		i++;
+		while (src[i] && i < (size - 1))
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
 	}
-	dst[i] = '\0';
-	return (j);
+	while (src[i])
+		i++;
+	return (i);
 }
 /*
 int	main(void)
 {
-	char	src[25] = " world ailhiu";
-	char	dst[20] = "hello";
-	size_t	size;
+char	src[25] = " world ailhiu";
+char	dst[20] = "hello";
+size_t	size;
 
-	size = 10;
-	printf("%zu\n", ft_strlcpy(dst, src, size));
-	//printf("%lu\n", strlcpy(dst, src, size));
-	printf("%s", dst);
-	return (0);
+size = 10;
+printf("%zu\n", ft_strlcpy(dst, src, size));
+//printf("%lu\n", strlcpy(dst, src, size));
+printf("%s", dst);
+return (0);
 }
 */

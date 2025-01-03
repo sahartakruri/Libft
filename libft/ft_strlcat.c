@@ -6,7 +6,7 @@
 /*   By: satakrur <satakrur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 15:50:05 by satakrur          #+#    #+#             */
-/*   Updated: 2025/01/03 11:30:27 by satakrur         ###   ########.fr       */
+/*   Updated: 2025/01/03 17:36:01 by satakrur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,27 +16,27 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 	size_t	j;
-	size_t	k;
-	size_t	n;
+	size_t	dest_len;
+	size_t	src_len;
 
+	src_len = ft_strlen(src);
+	dest_len = ft_strlen(dst);
 	i = 0;
-	j = 0;
-	k = 0;
-	while (dst[i] != '\0')
-		i++;
-	n = i;
-	while (src[j] != '\0')
-		j++;
-	while (src[k] != '\0' && i < dstsize - 1)
+	j = dest_len;
+	if (dest_len < size - 1 && size > 0)
 	{
-		dst[i] = src[k];
-		k++;
-		i++;
+		while (src[i] && dest_len + i < size - 1)
+		{
+			dst[j] = src[i];
+			j++;
+			i++;
+		}
+		dst[j] = '\0';
 	}
-	dst[i] = '\0';
-	return (n + j);
+	if (dest_len >= size)
+		dest_len = size;
+	return (dest_len + src_len);
 }
-
 /*
 int	main(void)
 {
@@ -46,8 +46,9 @@ int	main(void)
 
 	size = 10;
 	printf("%zu\n", ft_strlcat(dest, src, size));
-//	printf("%lu\n", strlcat(dest, src, size));
+	//printf("%lu\n", strlcat(dest, src, size));
 	printf("%s", dest);
+	// in the compiling add ft_strlen.c
 	return (0);
 }
 */

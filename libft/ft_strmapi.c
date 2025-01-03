@@ -6,7 +6,7 @@
 /*   By: satakrur <satakrur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 10:52:19 by satakrur          #+#    #+#             */
-/*   Updated: 2025/01/03 11:29:58 by satakrur         ###   ########.fr       */
+/*   Updated: 2025/01/03 17:08:45 by satakrur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	if (str == NULL)
 		return (NULL);
 	j = 0;
-	while (j <= i)
+	while (j < i)
 	{
 		str[j] = f(j, s[j]);
 		j++;
@@ -35,12 +35,12 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	str[j] = '\0';
 	return (str);
 }
-/*
+
 char	my_func(unsigned int index, char c)
 {
 	return (c + index);
 }
-
+/*
 int	main(void)
 {
 	char	*str;

@@ -6,7 +6,7 @@
 /*   By: satakrur <satakrur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 10:53:32 by satakrur          #+#    #+#             */
-/*   Updated: 2025/01/03 11:11:55 by satakrur         ###   ########.fr       */
+/*   Updated: 2025/01/03 17:53:11 by satakrur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (subs);
 }
 /*
-int main() {
-    char *s = "Hello, World!";
-    char *substr = ft_substr(s, 7, 5);
+int	main(void) {
+	char *s = "Hello, World!";
+	char *substr = ft_substr(s, 7, 5);
 	printf("Substring: %s\n", substr);
-    free(substr);
-    
-    return 0;
-}*/
+	free(substr);
+
+	return (0);
+}
+*/
