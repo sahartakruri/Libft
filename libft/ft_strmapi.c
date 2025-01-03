@@ -6,7 +6,7 @@
 /*   By: satakrur <satakrur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 10:52:19 by satakrur          #+#    #+#             */
-/*   Updated: 2025/01/03 17:08:45 by satakrur         ###   ########.fr       */
+/*   Updated: 2025/01/03 19:31:53 by satakrur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,12 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	str[j] = '\0';
 	return (str);
 }
-
+/*
 char	my_func(unsigned int index, char c)
 {
 	return (c + index);
 }
-/*
+
 int	main(void)
 {
 	char	*str;

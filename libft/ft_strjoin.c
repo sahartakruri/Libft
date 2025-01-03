@@ -6,24 +6,11 @@
 /*   By: satakrur <satakrur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 10:51:23 by satakrur          #+#    #+#             */
-/*   Updated: 2025/01/03 11:29:11 by satakrur         ###   ########.fr       */
+/*   Updated: 2025/01/03 19:36:11 by satakrur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (*s)
-	{
-		i++;
-		s++;
-	}
-	return (i);
-}
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

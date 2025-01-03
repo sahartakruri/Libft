@@ -6,13 +6,13 @@
 /*   By: satakrur <satakrur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 10:50:26 by satakrur          #+#    #+#             */
-/*   Updated: 2025/01/03 13:16:11 by satakrur         ###   ########.fr       */
+/*   Updated: 2025/01/03 19:30:47 by satakrur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_count(char const *s, char c)
+static size_t	ft_count(char const *s, char c)
 {
 	size_t	i;
 	size_t	n;
@@ -33,7 +33,7 @@ size_t	ft_count(char const *s, char c)
 	return (n);
 }
 
-char	*ft_putword(char *word, char const *s, int i, int word_len)
+static char	*ft_putword(char *word, char const *s, int i, int word_len)
 {
 	size_t	k;
 
@@ -49,7 +49,7 @@ char	*ft_putword(char *word, char const *s, int i, int word_len)
 	return (word);
 }
 
-char	*ft_memall(size_t word_len)
+static char	*ft_memall(size_t word_len)
 {
 	char	*word;
 

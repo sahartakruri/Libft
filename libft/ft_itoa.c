@@ -6,13 +6,13 @@
 /*   By: satakrur <satakrur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 10:47:36 by satakrur          #+#    #+#             */
-/*   Updated: 2025/01/03 16:59:43 by satakrur         ###   ########.fr       */
+/*   Updated: 2025/01/03 19:29:32 by satakrur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_memoall(size_t i)
+static char	*ft_memoall(size_t i)
 {
 	char	*str;
 
@@ -22,7 +22,7 @@ char	*ft_memoall(size_t i)
 	return (str);
 }
 
-size_t	ft_count(int n)
+static size_t	ft_count(int n)
 {
 	size_t	i;
 	int		sign;
@@ -47,7 +47,7 @@ size_t	ft_count(int n)
 	return (i);
 }
 
-char	*ft_special(void)
+static char	*ft_special(void)
 {
 	char	*str;
 
@@ -59,7 +59,7 @@ char	*ft_special(void)
 	return (str);
 }
 
-char	*ft_special2(void)
+static char	*ft_special2(void)
 {
 	char	*str;
 

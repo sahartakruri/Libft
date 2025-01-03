@@ -6,14 +6,13 @@
 /*   By: satakrur <satakrur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 13:08:36 by satakrur          #+#    #+#             */
-/*   Updated: 2025/01/03 11:29:39 by satakrur         ###   ########.fr       */
+/*   Updated: 2025/01/03 19:05:27 by satakrur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
@@ -24,8 +23,8 @@ int		ft_isalnum(int c);
 int		ft_isascii(int n);
 int		ft_isprint(int c);
 size_t	ft_strlen(const char *s);
-char	ft_toupper(int c);
-char	ft_tolower(int c);
+int		ft_toupper(int c);
+int		ft_tolower(int c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);

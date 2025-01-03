@@ -6,13 +6,13 @@
 /*   By: satakrur <satakrur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 10:53:20 by satakrur          #+#    #+#             */
-/*   Updated: 2025/01/03 14:59:49 by satakrur         ###   ########.fr       */
+/*   Updated: 2025/01/03 19:32:35 by satakrur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_check(char const *set, char const c)
+static int	ft_check(char const *set, char const c)
 {
 	int	i;
 
@@ -26,7 +26,7 @@ int	ft_check(char const *set, char const c)
 	return (0);
 }
 
-size_t	ft_start(char const *s1, char const *set)
+static size_t	ft_start(char const *s1, char const *set)
 {
 	size_t	start;
 
@@ -36,7 +36,7 @@ size_t	ft_start(char const *s1, char const *set)
 	return (start);
 }
 
-size_t	ft_end(char const *s1, char const *set, size_t start)
+static size_t	ft_end(char const *s1, char const *set, size_t start)
 {
 	size_t	end;
 	size_t	len;
@@ -48,7 +48,7 @@ size_t	ft_end(char const *s1, char const *set, size_t start)
 	return (end);
 }
 
-char	*ft_special(void)
+static char	*ft_special(void)
 {
 	char	*s2;
 
