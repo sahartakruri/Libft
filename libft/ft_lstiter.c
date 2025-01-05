@@ -1,74 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: satakrur <satakrur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/05 12:49:39 by satakrur          #+#    #+#             */
-/*   Updated: 2025/01/05 12:53:17 by satakrur         ###   ########.fr       */
+/*   Created: 2025/01/05 13:44:48 by satakrur          #+#    #+#             */
+/*   Updated: 2025/01/05 13:44:53 by satakrur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_list	*temp;
-
-	if (*lst == NULL)
-	{
-		*lst = new;
+	if (lst == NULL || f == NULL)
 		return ;
-	}
-	temp = *lst;
-	while (temp->next != NULL)
+	while (lst != NULL)
 	{
-		temp = temp->next;
+		f(lst->content);
+		lst = lst->next;
 	}
-	temp->next = new;
 }
-
 /*
-
 #include <stdio.h>
 
+void	ft_print(void *content)
+{
+	printf("%s\n", (char *)content);
+}
 int	main(void)
 {
-	t_list	*list;
-	char	*str1;
-	char	*str2;
-	char	*str3;
-	char	*str4;
-	t_list	*node1;
-	t_list	*node2;
-	t_list	*node3;
-	t_list	*node4;
+	t_list	*list = NULL;
+	char	*str1 = "hello";
+	char	*str2 = "every";
+	char	*str3 = "body";
+	char	*str4 = "i am new";
+	t_list	*node1 = ft_lstnew(str1);
+	t_list	*node2 = ft_lstnew(str2);
+	t_list	*node3 = ft_lstnew(str3);
+	t_list	*node4 = ft_lstnew(str4);
 
-	list = NULL;
-	str1 = "hello";
-	str2 = "every";
-	str3 = "body";
-	str4 = "i am new";
-	node1 = ft_lstnew(str1);
-	node2 = ft_lstnew(str2);
-	node3 = ft_lstnew(str3);
-	node4 = ft_lstnew(str4);
 	ft_lstadd_front(&list, node1);
 	ft_lstadd_front(&list, node2);
 	ft_lstadd_front(&list, node3);
 	ft_lstadd_back(&list, node4);
-	while(list != NULL)
-	{
-		printf("%s ->", (char *)list->content);
-		list = list->next;
-	}
+	ft_lstiter(list, ft_print);
 	//printf("\n%d", ft_lstsize(list));
 	//printf("%s", (char *)ft_lstlast(list)->content);
-	free(node1);
-	free(node2);
-	free(node3);
-	free(node4);
 	return (0);
-}
-*/
+}*/
