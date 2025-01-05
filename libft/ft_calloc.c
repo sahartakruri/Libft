@@ -6,7 +6,7 @@
 /*   By: satakrur <satakrur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 10:46:52 by satakrur          #+#    #+#             */
-/*   Updated: 2025/01/03 11:25:10 by satakrur         ###   ########.fr       */
+/*   Updated: 2025/01/05 19:21:56 by satakrur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_calloc(size_t num_elements, size_t element_size)
 	void	*s;
 	size_t	i;
 
+	if (element_size == 0 || (element_size * num_elements) > SIZE_MAX)
+		return (0);
 	s = malloc(num_elements * element_size);
 	if (s == NULL)
 		return (NULL);
