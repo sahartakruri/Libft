@@ -6,7 +6,7 @@
 /*   By: satakrur <satakrur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 13:45:12 by satakrur          #+#    #+#             */
-/*   Updated: 2025/01/05 14:51:29 by satakrur         ###   ########.fr       */
+/*   Updated: 2025/01/05 18:19:25 by satakrur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,24 @@
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_list;
-	t_list	*node;
+	t_list	*element;
+	void	*content;
 
-	if (f == NULL || lst == NULL)
+	new_list = NULL;
+	if (f == NULL || lst == NULL || del == NULL)
 		return (NULL);
 	new_list = NULL;
 	while (lst != NULL)
 	{
-		node = ft_lstnew(f(lst->content));
-		if (node == NULL)
+		content = f(lst->content);
+		element = ft_lstnew(content);
+		if (element == NULL)
 		{
-			ft_lstclear(&node, (*del));
+			del(content);
+			ft_lstclear(&new_list, del);
 			return (NULL);
 		}
-		ft_lstadd_back(&new_list, node);
+		ft_lstadd_back(&new_list, element);
 		lst = lst->next;
 	}
 	return (new_list);
@@ -84,5 +88,4 @@ int	main(void)
 	// printf("\n%d", ft_lstsize(list));
 	// printf("%s", (char *)ft_lstlast(list)->content);
 	return (0);
-}
-*/
+}*/
